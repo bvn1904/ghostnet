@@ -1,0 +1,12 @@
+# Virtual environment
+.venv/
+venv/
+env/
+lib/ 
+lib64
+lib64/
+bin/
+include/
+data/
+share/
+pyvenv.cfg
