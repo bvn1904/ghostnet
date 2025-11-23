@@ -51,3 +51,11 @@ paper mentions reduction of 1.95x reduction
 standard vgg params: 15m ghost-vgg params: 7.65m
 results: param reduction: 1.96x (48.97% reduction)
 ```
+========================================
+Calculating FLOPs...
+========================================
+Standard VGG-16: 314.570M FLOPs | 14.991M Params
+Ghost-VGG-16:    159.216M FLOPs | 7.650M Params
+----------------------------------------
+FLOPs Reduction:     49.39% (approx 1.98x)
+Parameter Reduction: 48.97% (approx 1.96x)
