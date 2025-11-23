@@ -33,3 +33,17 @@ results:
   flops reduction: 1.90x (paper claims ~2x)
   param reduction: 1.95x (paper claims ~2x)
 ```
+#### ghost-vgg-16
+
+Experiment run on CIFAR-10 using a dynamic layer replacement strategy (swapping `nn.Conv2d` for `GhostModule`).
+
+| ratio(s) | kernel(d) | optimizer | lr_scheduler    | accuracy(ours) | epochs | hardware | time  |
+| -----    | -----     | -----     | -----           | -----          | -----  | ----     | ----  |
+| 2        | 3         | SGD       | CosineAnnealing | 93.60%         | 200    | T4 GPU   | ~1.3h |
+
+- **Implementation**: Unlike the ResNet implementation, this experiment utilized a `replace_conv_with_ghost` utility to recursively modify a standard VGG-16 architecture at runtime.
+- **Convergence**: Achieved 93.60% accuracy at epoch 200. Best accuracy observed was ~93.63%.
+- **Computational Reduction**:
+  
+Standard VGG Params: 14.99M Ghost-VGG Params: 7.65M
+results: param reduction: 1.96x (48.97% reduction)
