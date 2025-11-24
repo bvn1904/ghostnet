@@ -6,10 +6,11 @@ implementation of the paper [ghostnet paper](https://arxiv.org/abs/1911.11907)
 
 - start a virtual env with `python3 -m venv .`
 - run `python ghostnet.py`
+- to download ghostnet weights pretrained on imagenet, run `python download-imagenet-weights.py`
 
 ### experiments
 
-#### ghostnet-resnet-56
+### ghostnet-resnet-56
 
 | no. | ratio(s) | kernel(d) | optimizer | lr_scheduler          | accuracy(ours) | accuracy(paper) | epochs | file             |
 | --- | -------- | --------- | --------- | --------------------- | -------------- | --------------- | ------ | ---------------- |
@@ -35,7 +36,9 @@ results:
   param reduction: 1.95x (paper claims ~2x)
 ```
 
-#### ghost-vgg-16
+---
+
+### ghost-vgg-16
 
 experiment run on cifar-10 using a dynamic layer replacement strategy (swapping `nn.conv2d` for `ghostmodule`).
 
@@ -47,15 +50,31 @@ experiment run on cifar-10 using a dynamic layer replacement strategy (swapping 
 - **computational reduction**:
 
 ```
-paper mentions reduction of 1.95x reduction
-standard vgg params: 15m ghost-vgg params: 7.65m
-results: param reduction: 1.96x (48.97% reduction)
-```
-========================================
-Calculating FLOPs...
-========================================
-Standard VGG-16: 314.570M FLOPs | 14.991M Params
-Ghost-VGG-16:    159.216M FLOPs | 7.650M Params
+calculating flops...
+standard vgg-16: 314.570M FLOPs | 14.991M Params
+ghost-vgg-16:    159.216M FLOPs | 7.650M Params
 ----------------------------------------
-FLOPs Reduction:     49.39% (approx 1.98x)
-Parameter Reduction: 48.97% (approx 1.96x)
+flops reduction:     49.39% (approx 1.98x)
+parameter reduction: 48.97% (approx 1.96x)
+```
+---
+
+### faster-r-cnn with ghostnet backbone
+
+| no. | ratio(s) | kernel(d)   | optimizer | lr_scheduler    | accuracy(ours) | accuracy(paper) | epochs | file                 |
+| --- | -------- | ----------- | --------- | --------------- | -------------- | --------------- | ------ | -------------------- |
+| 1   | 2        | 3,5(varied) | sgd       | constant(0.005) | 8.5% map       | 26.9%           | 12     | ghostnet_faster_rcnn |
+
+- the models mentioned in the paper used sgd for 12 epochs from imagenet pretrained weights, but our model was trained from scratch. hence there's a huge difference in map between the paper's results and ours
+- the paper used 1.1 as the width multiplier, but we used 1.0 as the width multiplier to decrease the computation required
+- but the decrease in computation between mobile net models is consistent with the paper. the model uses half the compute of what mobilenet uses. our model can match the results of mobilenet if trained for more epochs
+
+```
+ghostnet backbone (1.0x) flops: 149.31m
+ghostnet backbone (1.0x) params: 1.06m
+
+--- paper comparison (table 8) ---
+mobilenetv2 backbone flops:  300m
+mobilenetv3 backbone flops:  219m
+ghostnet 1.1x backbone flops: 164m
+```
