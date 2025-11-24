@@ -1,0 +1,143 @@
+{
+    "FasterRCNN_Run1": [
+        {
+            "epoch": 1,
+            "mAP": 0.03024597170279045,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_1.pth"
+        },
+        {
+            "epoch": 10,
+            "mAP": 0.0826462892127053,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_10.pth"
+        },
+        {
+            "epoch": 11,
+            "mAP": 0.08347232166497419,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_11.pth"
+        },
+        {
+            "epoch": 12,
+            "mAP": 0.08544264011921358,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_12.pth"
+        },
+        {
+            "epoch": 2,
+            "mAP": 0.046737328544193435,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_2.pth"
+        },
+        {
+            "epoch": 3,
+            "mAP": 0.05796596390951305,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_3.pth"
+        },
+        {
+            "epoch": 4,
+            "mAP": 0.06303291200542042,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_4.pth"
+        },
+        {
+            "epoch": 5,
+            "mAP": 0.06583656853453534,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_5.pth"
+        },
+        {
+            "epoch": 6,
+            "mAP": 0.07609279535097535,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_6.pth"
+        },
+        {
+            "epoch": 7,
+            "mAP": 0.07130030925151302,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_7.pth"
+        },
+        {
+            "epoch": 8,
+            "mAP": 0.07993585735776593,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_8.pth"
+        },
+        {
+            "epoch": 9,
+            "mAP": 0.07984211590703177,
+            "file": "checkpoints/faster-rcnn-run-1/ghost_fasterrcnn_epoch_9.pth"
+        }
+    ],
+    "FasterRCNN_Run2": [
+        {
+            "epoch": 1,
+            "mAP": 0.02408993408642194,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_1.pth"
+        },
+        {
+            "epoch": 2,
+            "mAP": 0.04870823533853883,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_2.pth"
+        },
+        {
+            "epoch": 3,
+            "mAP": 0.06271781258757393,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_3.pth"
+        },
+        {
+            "epoch": 4,
+            "mAP": 0.07218856261227151,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_4.pth"
+        },
+        {
+            "epoch": 5,
+            "mAP": 0.0755577436454398,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_5.pth"
+        },
+        {
+            "epoch": 6,
+            "mAP": 0.08618154558343542,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_6.pth"
+        },
+        {
+            "epoch": 7,
+            "mAP": 0.08669860205926141,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_7.pth"
+        },
+        {
+            "epoch": 8,
+            "mAP": 0.09408172913312886,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_8.pth"
+        },
+        {
+            "epoch": 9,
+            "mAP": 0.09202483097587665,
+            "file": "checkpoints/faster-rcnn-run-2/ghost_fasterrcnn_epoch_9.pth"
+        }
+    ],
+    "RetinaNet_Run1": [
+        {
+            "epoch": 1,
+            "mAP": 0.003476731907053252,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_1.pth"
+        },
+        {
+            "epoch": 2,
+            "mAP": 0.010631240442168273,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_2.pth"
+        },
+        {
+            "epoch": 3,
+            "mAP": 0.015445907771877954,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_3.pth"
+        },
+        {
+            "epoch": 4,
+            "mAP": 0.01277117610146261,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_4.pth"
+        },
+        {
+            "epoch": 5,
+            "mAP": 0.019061227733328637,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_5.pth"
+        },
+        {
+            "epoch": 6,
+            "mAP": 0.025830474774716974,
+            "file": "checkpoints/retinanet-run-1/ghost_retinanet_epoch_6.pth"
+        }
+    ]
+}

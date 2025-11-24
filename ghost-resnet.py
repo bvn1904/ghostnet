@@ -134,14 +134,14 @@ print("======================================")
 model = ResNet56()
 # # print(model)
 #
-convert_to_ghost_resnet(model, ratio = 2, dw_kernel_size = 3)
+convert_to_ghost_resnet(model, ratio = 3, dw_kernel_size = 3)
 #
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 #
 optimizer = optim.SGD(model.parameters(), lr = 0.1, momentum = 0.9, weight_decay = 1e-4)
-scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100, 150], gamma=0.1)
-# scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = 200)
+# scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100, 150], gamma=0.1)
+scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = 200)
 criterion = nn.CrossEntropyLoss()
 #
 transform_train = transforms.Compose([
@@ -204,22 +204,24 @@ def test(epoch):
     acc = 100. * correct / total
     print(f'Epoch {epoch} Test Acc: {acc:.3f}%')
     return acc
-#
-#
-# print(f"Starting training on {device} for 200 epochs...")
-# best_acc = 0.0
-#
-# for epoch in range(200):
-#     train(epoch)
-#     acc = test(epoch)
-#     scheduler.step()
-#
-#     if acc > best_acc:
-#         best_acc = acc
-#         torch.save(model.state_dict(), 'gr_cosine.pth')
-#
-# print(f"\nFinal Best Accuracy: {best_acc:.3f}%")
-# print(f"Paper Target: 92.7%")
+
+
+
+print(f"Starting training on {device} for 200 epochs...")
+
+best_acc = 0.0
+
+for epoch in range(200):
+    train(epoch)
+    acc = test(epoch)
+    scheduler.step()
+
+    if acc > best_acc:
+        best_acc = acc
+        torch.save(model.state_dict(), 'gr_cosine.pth')
+
+print(f"\nFinal Best Accuracy: {best_acc:.3f}%")
+print(f"Paper Target: 92.7%")
 
 
 
