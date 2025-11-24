@@ -1,11 +1,12 @@
-## ghostnet
+#aaaa# ghostnet
 
 implementation of the paper [ghostnet paper](https://arxiv.org/abs/1911.11907)
 
 ### running locally
 
-- start a virtual env with `python3 -m venv .`
-- run `python ghostnet.py`
+- start a virtual env with `python3 -m venv .` 
+- run `python ghostnet.py` 
+- to download ghostnet weights pretrained on imagenet, run `python download-imagenet-weights.py`
 
 ### experiments
 
